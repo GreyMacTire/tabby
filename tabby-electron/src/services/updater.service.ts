@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core'
-import axios from 'axios'
 
 import { Logger, LogService, ConfigService, UpdaterService, PlatformService, TranslateService } from 'tabby-core'
 import { ElectronService } from '../services/electron.service'
-
-const UPDATES_URL = 'https://api.github.com/repos/eugeny/tabby/releases/latest'
 
 @Injectable()
 export class ElectronUpdaterService extends UpdaterService {
@@ -100,16 +97,6 @@ export class ElectronUpdaterService extends UpdaterService {
             })
 
         } else {
-            this.logger.debug('Checking for updates through fallback method.')
-            const response = await axios.get(UPDATES_URL)
-            const data = response.data
-            const version = data.tag_name.substring(1)
-            if (this.electron.app.getVersion() !== version) {
-                this.logger.info('Update available')
-                this.updateURL = data.html_url
-                return true
-            }
-            this.logger.info('No updates')
             return false
         }
         return this.downloaded
