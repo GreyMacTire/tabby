@@ -223,6 +223,14 @@ export class ConfigService {
         }
         this._store = await this.maybeDecryptConfig(this._store)
         this.migrate(this._store)
+
+        // [DISABLED] Config Sync is disabled — force sync host to empty
+        if (this._store.configSync) {
+            this._store.configSync.host = null
+            // Original host value is ignored to prevent any sync activity
+            // delete this._store.configSync.host
+        }
+
         this.store = new ConfigProxy(this._store, this.defaults)
         this.vault.setStore(this.store.vault)
     }

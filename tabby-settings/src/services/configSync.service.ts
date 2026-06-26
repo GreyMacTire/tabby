@@ -41,7 +41,9 @@ export class ConfigSyncService {
     }
 
     isAvailable (): boolean {
-        return this.hostApp.platform !== Platform.Web
+        // [DISABLED] Config Sync is disabled in this build
+        // return this.hostApp.platform !== Platform.Web
+        return false
     }
 
     isEnabled (): boolean {
