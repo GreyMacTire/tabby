@@ -1,5 +1,11 @@
 name: Package-Build
-on: [push, pull_request]
+on:
+  workflow_dispatch:
+    inputs:
+      git_ref:
+        description: 'Branch or tag to build'
+        required: true
+        default: 'master'
 jobs:
   Lint:
     runs-on: ubuntu-24.04
@@ -8,6 +14,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
+        ref: ${{ inputs.git_ref || github.ref }}
         fetch-depth: 0
 
     - name: Installing Node
@@ -51,6 +58,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
+        ref: ${{ inputs.git_ref || github.ref }}
         fetch-depth: 0
 
     - name: Installing Node
@@ -163,6 +171,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
+        ref: ${{ inputs.git_ref || github.ref }}
         fetch-depth: 0
 
     - name: Install Node
@@ -320,6 +329,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
+        ref: ${{ inputs.git_ref || github.ref }}
         fetch-depth: 0
 
     - name: Add Windows SDK signtool to PATH
