@@ -29,9 +29,13 @@ export class ConfigSyncSettingsTabComponent extends BaseComponent {
         super()
     }
 
-    async ngOnInit () {
-        await this.testConnection()
-        this.loadConfigs()
+    //async ngOnInit () {
+    //    await this.testConnection()
+    //    this.loadConfigs()
+    //}
+
+    async ngOnInit (): Promise<void> {
+        // No-op: Config Sync is disabled in this build
     }
 
     async testConnection () {

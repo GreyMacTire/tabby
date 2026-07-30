@@ -40,7 +40,8 @@ export class ConfigSyncService {
     }
 
     isAvailable (): boolean {
-        return this.hostApp.platform !== Platform.Web
+        //return this.hostApp.platform !== Platform.Web
+        return false
     }
 
     isEnabled (): boolean {

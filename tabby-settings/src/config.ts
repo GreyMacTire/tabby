@@ -9,9 +9,9 @@ export class SettingsConfigProvider extends ConfigProvider {
             configID: null,
             auto: false,
             parts: {
-                hotkeys: true,
-                appearance: true,
-                vault: true,
+                hotkeys: false,
+                appearance: false,
+                vault: false,
             },
         },
         hotkeys: {
