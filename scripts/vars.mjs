@@ -29,9 +29,7 @@ export const builtinPlugins = [
     'tabby-telnet',
     'tabby-local',
     'tabby-electron',
-    'tabby-plugin-manager',
     'tabby-linkifier',
-    'tabby-auto-sudo-password',
 ]
 
 export const packagesWithDocs = [
