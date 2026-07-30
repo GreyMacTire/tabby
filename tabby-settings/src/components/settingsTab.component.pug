@@ -93,14 +93,13 @@
                     //       .title(translate) Automatic Updates
                     //        .description(translate) Enable automatic installation of updates when they become available.
                     //    toggle([(ngModel)]='config.store.enableAutomaticUpdates', (ngModelChange)='saveConfiguration()')
-
-                    .form-line(*ngIf='hostApp.platform !== Platform.Web')
-                        .header
-                            .title(translate) Debugging
-
-                        button.btn.btn-secondary((click)='hostWindow.openDevTools()')
-                            i.fas.fa-bug
-                            span(translate) Open DevTools
+                    
+                    //.form-line(*ngIf='hostApp.platform !== Platform.Web')
+                    //    .header
+                    //        .title(translate) Debugging
+                    //        button.btn.btn-secondary((click)='hostWindow.openDevTools()')
+                    //            i.fas.fa-bug
+                    //            span(translate) Open DevTools
 
                     h3(translate) Accessibility
                     .form-line
