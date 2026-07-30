@@ -1,6 +1,6 @@
 import * as yaml from 'js-yaml'
 import { Injectable } from '@angular/core'
-import { ConfigService, HostAppService, Logger, LogService, Platform, PlatformService } from 'tabby-core'
+import { ConfigService, Logger, LogService, PlatformService } from 'tabby-core'
 
 export interface User {
     id: number
@@ -25,7 +25,7 @@ export class ConfigSyncService {
     constructor (
         log: LogService,
         private platform: PlatformService,
-        private hostApp: HostAppService,
+        //private hostApp: HostAppService,
         private config: ConfigService,
     ) {
         this.logger = log.create('configSync')
