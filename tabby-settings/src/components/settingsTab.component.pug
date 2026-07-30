@@ -79,14 +79,14 @@
                             .description(translate) Allows quickly opening a terminal in the selected folder
                         toggle([ngModel]='isShellIntegrationInstalled', (ngModelChange)='toggleShellIntegration()')
 
-                    .form-line(*ngIf='hostApp.platform !== Platform.Web')
-                        .header
-                            .title(translate) Enable analytics
-                            .description(translate) We're only tracking your Tabby and OS versions.
-                        toggle(
-                            [(ngModel)]='config.store.enableAnalytics',
-                            (ngModelChange)='saveConfiguration(true)',
-                        )
+                    //.form-line(*ngIf='hostApp.platform !== Platform.Web')
+                    //    .header
+                    //       .title(translate) Enable analytics
+                    //        .description(translate) We're only tracking your Tabby and OS versions.
+                    //    toggle(
+                    //        [(ngModel)]='config.store.enableAnalytics',
+                    //        (ngModelChange)='saveConfiguration(true)',
+                    //    )
 
                     //.form-line(*ngIf='hostApp.platform !== Platform.Web')
                     //    .header
