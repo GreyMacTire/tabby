@@ -254,7 +254,8 @@ export class VaultService {
     }
 
     isEnabled (): boolean {
-        return !!this.store
+        //return !!this.store
+        return false
     }
 }
 
