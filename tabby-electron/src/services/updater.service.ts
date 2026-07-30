@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core'
 import { Logger, LogService, ConfigService, UpdaterService, PlatformService, TranslateService } from 'tabby-core'
 import { ElectronService } from '../services/electron.service'
 
-const UPDATES_URL = 'https://api.github.com/repos/eugeny/tabby/releases/latest'
+//const UPDATES_URL = 'https://api.github.com/repos/eugeny/tabby/releases/latest'
 
 @Injectable()
 export class ElectronUpdaterService extends UpdaterService {
@@ -99,6 +99,7 @@ export class ElectronUpdaterService extends UpdaterService {
             })
 
         } else {
+            /*
             this.logger.debug('Checking for updates through fallback method.')
             const response = await fetch(UPDATES_URL)
             const data = await response.json()
@@ -109,6 +110,7 @@ export class ElectronUpdaterService extends UpdaterService {
                 return true
             }
             this.logger.info('No updates')
+            */
             return false
         }
         return this.downloaded
